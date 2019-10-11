@@ -3,12 +3,14 @@ import styled from "styled-components";
 import axios from "axios";
 import { CharCard } from "./charCard.js";
 
+const Flex = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+`;
+
 export const Char = props => {
   const [data, setData] = useState([]);
-  //   const [name, setName] = useState("");
-  //   const [mass, setMass] = useState("");
-  //   const [eyeColor, setEyeColor] = useState("");
-  //   const [gender, setGender] = useState("");
 
   useEffect(() => {
     axios
@@ -16,11 +18,6 @@ export const Char = props => {
       .then(response => {
         console.log(response);
         setData(response.data.results);
-        // const { name, mass, eye_color, gender } = response.data.results;
-        // setName(name);
-        // setMass(mass);
-        // setEyeColor(eye_color);
-        // setGender(gender);
       })
       .catch(error => {
         console.log("the data was not return", error);
@@ -28,7 +25,7 @@ export const Char = props => {
   }, []);
 
   return (
-    <div>
+    <Flex>
       {data.map(char => {
         return (
           <CharCard
@@ -40,6 +37,6 @@ export const Char = props => {
           />
         );
       })}
-    </div>
+    </Flex>
   );
 };

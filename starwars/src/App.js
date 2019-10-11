@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import axios from "axios";
 import { Char } from "./Cards/char.js";
+import styled from "styled-components";
+
+const Flex = styled.div`
+  width: 100%;
+`;
 
 const App = props => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -12,10 +16,10 @@ const App = props => {
   // sync up with, if any.
 
   return (
-    <div className="App">
+    <Flex>
       <h1 className="Header">React Wars</h1>
       <Char />
-    </div>
+    </Flex>
   );
 };
 
