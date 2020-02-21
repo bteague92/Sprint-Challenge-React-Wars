@@ -13,11 +13,15 @@ const Card = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  h1{
+    border-bottom: 1px solid white;
+  }
 `;
 
 export const CharCard = props => {
   return (
-    <Card>
+    <Card key={props.name}>
       <h1>{props.name}</h1>
       <h3>Gender: {props.gender}</h3>
       <h3>Eye Color: {props.eyeColor}</h3>
