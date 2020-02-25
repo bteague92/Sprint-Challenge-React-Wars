@@ -9,6 +9,15 @@ const Flex = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  .Header{
+    color: yellow;
+    font-size: 5vw;
+
+    @media(max-width: 800px){
+      font-size: 8vw;
+    }
+  }
 `;
 
 const App = props => {

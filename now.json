@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "name": "Sprint-Challenge-React-Wars/client",
+    "builds": [
+        {
+            "src": "package.json",
+            "use": "@now/static-build",
+            "config": {
+                "distDir": "build"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "Sprint-Challenge-React-Wars/client/$1"
+        }
+    ]
+}
